@@ -9,7 +9,6 @@ import Events from "@/pages/events";
 import Gallery from "@/pages/gallery";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
-import AdminEvents from "@/pages/admin/events";
 import "./lib/i18n";
 
 function Router() {
@@ -20,7 +19,6 @@ function Router() {
       <Route path="/gallery" component={Gallery} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
-      <Route path="/admin/events" component={AdminEvents} />
       <Route component={NotFound} />
     </Switch>
   );

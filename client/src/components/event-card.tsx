@@ -1,10 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { type Event } from "@shared/schema";
+import { type Event } from "@/lib/data";
 import { format } from "date-fns";
 import { useTranslation } from "react-i18next";
 
 interface EventCardProps {
-  event: Event;
+  event: Event & { date: Date };
 }
 
 export function EventCard({ event }: EventCardProps) {
@@ -27,7 +27,7 @@ export function EventCard({ event }: EventCardProps) {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground mb-2">
-          {format(new Date(event.date), "PPP")}
+          {format(event.date, "PPP")}
         </p>
         <p className="line-clamp-3">
           {isMarathi ? event.descriptionMr : event.descriptionEn}
