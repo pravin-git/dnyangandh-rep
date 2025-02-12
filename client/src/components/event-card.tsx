@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import { useTranslation } from "react-i18next";
 
 interface EventCardProps {
-  event: Event & { date: Date };
+  event: Event;
 }
 
 export function EventCard({ event }: EventCardProps) {
@@ -27,7 +27,7 @@ export function EventCard({ event }: EventCardProps) {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-muted-foreground mb-2">
-          {format(event.date, "PPP")}
+          {format(new Date(event.date), "PPP")}
         </p>
         <p className="line-clamp-3">
           {isMarathi ? event.descriptionMr : event.descriptionEn}
